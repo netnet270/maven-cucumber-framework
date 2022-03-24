@@ -1,4 +1,4 @@
-package stepDefinitions;
+package facebook.stepDefinitions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,14 +16,14 @@ public class facebookSteps {
 	
 	@Given("^Open facebook application$")
 	public void openFacebookApplication() {
-		WebDriverManager.chromedriver().setup();	
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		driver.get("https://www.faceboook.com/");
+		driver.get("https://www.facebook.com/");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
-	@Then("^Verify email textbox is dispayed$")
-	public void verifyEmailTextboxIsDispayed() {
+	@Then("^Verify email textbox is displayed$")
+	public void verifyEmailTextboxIsDisplayed() {
 		Assert.assertTrue(driver.findElement(By.id("email")).isDisplayed());
 	}
 

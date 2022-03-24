@@ -4,6 +4,6 @@ Feature: Facebook login page
   @displayed
   Scenario: Verify login page
     Given Open facebook application
-    Then Verify email textbox is dispayed 
-    And Verify password textbox is displayed 
+    Then Verify email textbox is displayed
+    And Verify password textbook is displayed
     And Close application
