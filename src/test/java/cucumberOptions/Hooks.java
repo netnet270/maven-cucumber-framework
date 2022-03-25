@@ -90,8 +90,9 @@ public class Hooks {
       }
       
       driver.get(GlobalConstants.DEV_URL);
-      driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+      driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME, TimeUnit.SECONDS);
       log.info("------------- Started the browser -------------");
+      
     }
     return driver;
   }

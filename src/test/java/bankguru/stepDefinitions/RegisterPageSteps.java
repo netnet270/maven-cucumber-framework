@@ -18,24 +18,10 @@ public class RegisterPageSteps {
     registerPage = PageGeneratorManager.getRegisterPageObject(driver);
   }
   
-  @When("^Enter to Email ID textbox with value \"([^\"]*)\"$")
-  public void enterToEmailIDTextboxWithValue(String email) {
-    registerPage.enterToTextboxByLabel(driver, "Email ID", email);
-  }
-  
-  @When("^Click to Submit button at Register page$")
-  public void clickToSubmitButtonAtRegisterPage() {
-    registerPage.clickToButtonByValue(driver, "Submit");
-  }
-  
-  @Then("^Get User ID text at Info table$")
-  public void getUserIDTextAtInfoTable() {
-    registerPage.getRowValueByRowName(driver, "User ID :");
-  }
-  
-  @Then("^Get Password text at Info table$")
-  public void getPasswordTextAtInfoTable() {
-    registerPage.getRowValueByRowName(driver, "Password :");
+  @Then("^Get User and Password text at Info table$")
+  public void getUserAndPasswordTextAtInfoTable() {
+    userID = registerPage.getUserIDValueAtTable(driver);
+    password = registerPage.getPasswordValueAtTable(driver);
   }
   
   @When("^Back to Login Page$")
