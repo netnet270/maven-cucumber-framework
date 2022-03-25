@@ -14,6 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
+		<report.version>3.20.0</report.version>
 	</properties>
 
 	<dependencies>
@@ -56,7 +57,7 @@
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
-			<version>3.20.0</version>
+			<version>${report.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -80,8 +81,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.18.1</version>
 				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
 					<includes>
-						<include>**/*/CucumberTestRunner.java</include>
+						<include>**/*/bankTestRunner.java</include>
 					</includes>
 				</configuration>
 			</plugin>
@@ -90,7 +92,7 @@
 			<plugin>
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>3.10.0</version>
+				<version>${report.version}</version>
 				<executions>
 					<execution>
 						<id>execution</id>
@@ -99,11 +101,14 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>SELENIUM ONLINE - BANK GURU</projectName>
+							<projectName>BANK GURU CUCUMBER REPORT</projectName>
+							<skip>false</skip>
 							<outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
-							<cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>
-							<enableFlashCharts>true</enableFlashCharts>
-							<skippedFails>true</skippedFails>
+							<inputDirectory>${project.build.directory}/site</inputDirectory>
+							<jsonFiles>
+								<param>**/*.json</param>
+							</jsonFiles>
+							<checkBuildResult>false</checkBuildResult>
 						</configuration>
 					</execution>
 				</executions>
