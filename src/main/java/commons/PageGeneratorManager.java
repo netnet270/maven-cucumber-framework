@@ -1,10 +1,7 @@
 package commons;
 
 import org.openqa.selenium.WebDriver;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.NewCustomerPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.*;
 
 public class PageGeneratorManager {
   public static LoginPageObject getLoginPageObject(WebDriver driver){
@@ -21,5 +18,9 @@ public class PageGeneratorManager {
   
   public static NewCustomerPageObject getNewCustomerPageObject(WebDriver driver){
     return new NewCustomerPageObject(driver);
+  }
+  
+  public static CommonPageObject getCommonPageObject(WebDriver driver){
+    return new CommonPageObject(driver);
   }
 }

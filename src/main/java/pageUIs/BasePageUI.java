@@ -7,4 +7,5 @@ public class BasePageUI {
   public static final String RADIO_BUTTON = "xpath=//input[@type='radio' and @value='%s']" ;
   public static final String DYNAMIC_ROW_VALUE_BY_ROW_NAME = "xpath=//td[text()='%s']/following-sibling::td";
   public static final String DYNAMIC_TEXTAREA_BY_LABEL = "xpath=//td[text()='%s']//following-sibling::td/textarea";
+  public static final String DYNAMIC_MESSAGE_TABLE = "xpath=//table//p[@class='heading3' and text()='%s']";
 }
